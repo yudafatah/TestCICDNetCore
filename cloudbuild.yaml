@@ -1,0 +1,12 @@
+steps:
+ # build the container image
+ name: 'grc.io/cloud-builders/docker'
+ args: ['build', '-t', 'grc.io/testnetcore-307711/api-ci-cd', '.']
+ # push the container image to container registry
+ name: 'grc.io/cloud-builders/docker'
+ args: ['push', 'gcr.io/testnetcore-307711/api-ci-cd']
+ #deploy container image to cloud run
+ name: 'grc.io/cloud-builders/docker'
+ args: ['beta', 'run', 'deploy', 'api-ci-cd', '--image', 'gcr.io/testnetcore-307711/api-ci-cd']
+images:
+ gcr.io/testnetcore-307711/api-ci-cd
