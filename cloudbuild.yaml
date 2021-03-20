@@ -6,7 +6,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/testnetcore-307711/api-ci-cd']
   # deploy container image to cloud run
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'api-ci-cd', '--image', 'gcr.io/testnetcore-307711/api-ci-cd', '--region', 'asia-southeast1', '--platform', 'managed', '--allow-unauthenticated']
 images:
 - gcr.io/testnetcore-307711/api-ci-cd
