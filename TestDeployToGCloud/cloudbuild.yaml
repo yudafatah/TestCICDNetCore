@@ -7,6 +7,6 @@ steps:
  args: ['push', 'gcr.io/testnetcore-307711/api-ci-cd']
  #deploy container image to cloud run
  name: 'grc.io/cloud-builders/docker'
- args: ['beta', 'run', 'deploy', 'api-ci-cd', '--image', 'gcr.io/testnetcore-307711/api-ci-cd']
+ args: ['beta', 'run', 'deploy', 'api-ci-cd', '--image', 'gcr.io/testnetcore-307711/api-ci-cd', '--region', 'asia-southeast1', '--platform', 'managed', '--allow-unauthenticated']
 images:
  gcr.io/testnetcore-307711/api-ci-cd
