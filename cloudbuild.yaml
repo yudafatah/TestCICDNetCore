@@ -7,6 +7,6 @@ steps:
   args: ['push', 'gcr.io/testnetcore-307711/api-ci-cd']
   # deploy container image to cloud run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'api-ci-cd', --use-http2, '--image', 'gcr.io/testnetcore-307711/api-ci-cd', '--region', 'asia-southeast1', '--platform gke', 'managed', '--allow-unauthenticated']
+  args: ['alpha', 'run', 'deploy', 'api-ci-cd', --use-http2, '--image', 'gcr.io/testnetcore-307711/api-ci-cd', '--region', 'asia-southeast1', '--platform', 'managed', '--allow-unauthenticated']
 images:
 - gcr.io/testnetcore-307711/api-ci-cd
